@@ -6,16 +6,21 @@
 
     using BusTimetables.Data.Models;
 
-    internal class SettingsSeeder : ISeeder
+    public class RoutesSeeder : ISeeder
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
         {
-            if (dbContext.Settings.Any())
+            if (dbContext.Routes.Any())
             {
                 return;
             }
 
-            await dbContext.Settings.AddAsync(new Setting { Name = "Setting1", Value = "value1" });
+            dbContext.Routes.Add(new Route
+            {
+                Name = "София - Враца",
+                From = "София",
+                To = "Враца",
+            });
         }
     }
 }

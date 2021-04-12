@@ -24,7 +24,18 @@
         {
         }
 
-        public DbSet<Setting> Settings { get; set; }
+
+        public DbSet<Agency> Agencies { get; set; }
+
+        public DbSet<Bus> Buses { get; set; }
+
+        public DbSet<Passenger> Passengers { get; set; }
+
+        public DbSet<Route> Routes { get; set; }
+
+        public DbSet<Ticket> Tickets { get; set; }
+
+        public DbSet<Trip> Trips { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 
